@@ -26,6 +26,9 @@ Features:
  * 12-bit ADC on every pin.
  * 12-bit DAC on every pin.
 
+Note: The format is DIP, but it's NOT on a 0.1" grid! That means you
+can't plug it into a breadboard. The format is 2mm pitch metric DIP with
+10mm row spacing center-to-center.
 
 ![IO Mod Pinout](Images/IOMOD-v1_0-pinout.jpeg)
 
