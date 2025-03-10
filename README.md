@@ -34,6 +34,11 @@ can't plug it into a breadboard. The format is 2mm pitch metric DIP with
 
 ![IO Mod Dimensions](Images/IOMOD-v1_0-dimensions.jpeg)
 
+Also included is the design for a simple 2mm-to-0.1" breakout board, which
+you can use to make the module breadboard-friendly.
+
+![2mm to 0.1" breakout](Images/DIP-adapter.jpg)
+
 More information:
 
   [www.superhouse.tv/iomod](http://www.superhouse.tv/iomod)
