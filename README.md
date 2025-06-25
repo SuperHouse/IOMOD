@@ -3,7 +3,7 @@ Multi-purpose I/O Module
 
 Copyright 2025 SuperHouse Automation Pty Ltd  www.superhouse.tv
 
-A general-purpose I/O module for the Testomatic PCB test jig system
+A general-purpose I/O module for the [Testomatic PCB test jig system](https://github.com/superhouse/testomatic)
 and other projects.
 
 ![IO Mod](Images/IOMOD-v1_0-oblique.jpeg)
