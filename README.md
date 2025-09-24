@@ -6,7 +6,7 @@ Copyright 2025 SuperHouse Automation Pty Ltd  www.superhouse.tv
 A general-purpose I/O module for the Testomatic PCB test jig system
 and other projects.
 
-![IO Mod](Images/IOMOD-v1_0-oblique.jpeg)
+![IO Mod](Images/IOMOD-AD5593R-v2_0-oblique.png)
 
 Testomatic provides sockets for I/O modules, allowing the capabilities
 of the test jig to be customised to suit specific requirements. This
@@ -30,14 +30,18 @@ Note: The format is DIP, but it's NOT on a 0.1" grid! That means you
 can't plug it into a breadboard. The format is 2mm pitch metric DIP with
 10mm row spacing center-to-center.
 
-![IO Mod Pinout](Images/IOMOD-v1_0-pinout.jpeg)
+IOMOD pinout:
 
-![IO Mod Dimensions](Images/IOMOD-v1_0-dimensions.jpeg)
+![IO Mod Pinout](Images/IOMOD-v2_0-pinout.jpeg)
+
+Mechanical dimensions:
+
+![IO Mod Dimensions](Images/IOMOD-v2_0-dimensions.png)
 
 Also included is the design for a simple 2mm-to-0.1" breakout board, which
 you can use to make the module breadboard-friendly.
 
-![2mm to 0.1" breakout](Images/DIP-adapter.jpg)
+![2mm to 0.1" breakout](Images/DIP20-adapter.png)
 
 More information:
 
