@@ -6,6 +6,8 @@ Copyright 2025 SuperHouse Automation Pty Ltd  www.superhouse.tv
 A general-purpose I/O module for the [Testomatic PCB test jig system](https://github.com/superhouse/testomatic)
 and other projects.
 
+For use with Arduino, see Rob Tillaart's excellent library at [github.com/RobTillaart/AD5593R](https://github.com/RobTillaart/AD5593R)
+
 ![IO Mod](Images/IOMOD-AD5593R-v2_0-oblique.png)
 
 Testomatic provides sockets for I/O modules, allowing the capabilities
