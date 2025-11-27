@@ -16,7 +16,7 @@ and up to 8 I/O pins per module. Modules can also optionally support two
 power domains so that data connections to the host can be at a different 
 voltage to connections to the target device.
 
-4 reference implementations have been created so far, including:
+4 reference implementations have been created so far:
 
  * AD5593R (I2C)
  * MCP23008 (I2C)
@@ -49,7 +49,7 @@ not required. It's very flexible because it can handle both analog and
 digital input and output with a true analog output via DAC, but unfortunately 
 the AD5593R chips are quite expensive.
 
-![IO Mod](Images/IOMOD-AD5593R-v2_0-oblique.png)
+![IOMOD-AD5593R](Images/IOMOD-AD5593R-v2_0-oblique.png)
 
 Features:
 
@@ -112,6 +112,8 @@ Because SerialWombat firmware allows advanced functionality to be
 offloaded to the I/O expander, it can be configured by the host and then 
 left to handle its own tasks such as driving PWM, reading encoder 
 signals, etc.
+
+![IOMOD-SW8B](Images/IOMOD-SW8B-v1_0-oblique.png)
 
 More information to come.
 
