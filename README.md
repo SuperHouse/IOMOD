@@ -8,7 +8,8 @@ I/O modules for use in test systems and other projects.
 Originally developed for the [Testomatic PCB test jig system](https://github.com/superhouse/testomatic).
 
 The Testomatic chassis includes sockets for 7 IOMODs, allowing different 
-
+modules to be installed based on the specific requirements of the test 
+plan for the Device Under Test.
 
 The module pinout allows for either I2C or SPI connections to modules, 
 and up to 8 I/O pins per module. Modules can also optionally support two 
