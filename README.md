@@ -6,7 +6,7 @@
 IOMOD is a mechanical and electrical convention for creating pluggable 
 I/O modules for use in test systems and other projects.
 
-![IO Mod Pinout](Images/IOMOD-family.jpg)
+![IOMOD family](Images/IOMOD-family.jpg)
 
 The module pinout allows for either I2C or SPI connections to modules, 
 and up to 8 I/O pins per module. Modules can also optionally support two 
@@ -37,21 +37,22 @@ plan for the Device Under Test.
 
 ## IOMOD Pinout
 
-<img style="float: right;" src="Images/IOMOD-pinout.png">
 IOMOD designs are not required to implement all signals. Typically an I2C-based 
 module will leave the SPI-related pins unconnected, and vice versa. Modules 
-may also not implement signals such as the active-low interrupt output or 
-the reset pin, and they may not implement all 8 GPIO signals.
+may also omit signals such as the active-low interrupt output or 
+the reset pin, and they don't need to implement all 8 GPIO signals.
 
 For example, a module designed specifically for a high-speed SPI 
-single-channel precision ADC may implement a single GPIO and leave 
+single-channel high-precision ADC may implement a single GPIO and leave 
 the rest unconnected. This is perfectly valid if it suits your use-case.
 
 Modules may also choose to fully isolate the power domains, with a 
 floating GND on the I/O side split from the signal GND on the control side. 
 The reference designs included here tie both GND pins together as a 
-common reference but this is not required if you are implementing full 
-isolation.
+common reference, but if you want to design a module with full galvanic 
+isolation you can choose to keep the GND pins separated from each other.
+
+![IOMOD Pinout](Images/IOMOD-pinout.png)
 
 | Pin   | Name  | Use                                       |
 |-------|-------|-------------------------------------------|
@@ -78,6 +79,16 @@ isolation.
 
 ![2mm to 0.1" breakout](Images/DIP20-adapter.png)
 
+## Labelling
+
+A 3D-printed cap design is included that can be glued onto the top of 
+the module to give it a large flat area for labels. A dab of Loctite 
+Extreme Gel or other suitable glue will hold it in place. It has recesses 
+to allow it to sit down over the ends of the header pins.
+
+Labels for the reference designs are included as an Affinity document 
+and an A4 PDF. The labels have tabs that wrap underneath the module 
+to hold the label firmly in place.
 
 ## IOMOD-AD5593R
 
