@@ -1,15 +1,10 @@
-# IOMOD Multi-purpose I/O Module
+# IOMOD Multi-Purpose I/O Module
 
-Copyright 2025 SuperHouse Automation Pty Ltd  www.superhouse.tv
+*Copyright 2025 SuperHouse Automation Pty Ltd  
+[www.superhouse.tv]()*
 
 IOMOD is a mechanical and electrical convention for creating pluggable 
 I/O modules for use in test systems and other projects.
-
-Originally developed for the [Testomatic PCB test jig system](https://github.com/superhouse/testomatic).
-
-The Testomatic chassis includes sockets for 7 IOMODs, allowing different 
-modules to be installed based on the specific requirements of the test 
-plan for the Device Under Test.
 
 The module pinout allows for either I2C or SPI connections to modules, 
 and up to 8 I/O pins per module. Modules can also optionally support two 
@@ -23,35 +18,61 @@ voltage to connections to the target device.
  * MCP23S08 (SPI)
  * Serial Wombat 8B (I2C)
 
+These reference implementations have been designed "upside down", so 
+that when they are assembled the parts will be underneath the module. 
+This allows the top of the module to be totally flat except for the tops 
+of the header pins and their solder joints.
+
 Note: The format is DIP, but it's NOT on a 0.1" grid! That means you
 can't plug it into a breadboard. The format is 2mm pitch metric DIP with
 10mm row spacing center-to-center. An adapter module design is also 
 provided to allow easy use in a breadboard.
 
-## IOMOD pinout
+Originally developed for the [Testomatic PCB test jig system](https://github.com/superhouse/testomatic).
+
+The Testomatic chassis includes sockets for 7 IOMODs, allowing different 
+modules to be installed based on the specific requirements of the test 
+plan for the Device Under Test.
+
+## IOMOD Pinout
+
+IOMOD designs are not required to implement all signals. Typically an I2C-based 
+module will leave the SPI-related pins unconnected, and vice versa. Modules 
+may also not implement signals such as the active-low interrupt output or 
+the reset pin, and they may not implement all 8 GPIO signals.
+
+For example, a module designed specifically for a high-speed SPI 
+single-channel precision ADC may implement a single GPIO and leave 
+the rest unconnected. This is perfectly valid if it suits your use-case.
+
+Modules may also choose to fully isolate the power domains, with a 
+floating GND on the I/O side split from the signal GND on the control side. 
+The reference designs included here tie both GND pins together as a 
+common reference but this is not required if you are implementing full 
+isolation.
 
 ![IO Mod Pinout](Images/IOMOD-v2_0-pinout.jpeg)
 
-Mechanical dimensions:
+## IOMOD Mechanical Dimensions
 
 ![IO Mod Dimensions](Images/IOMOD-v2_0-dimensions.png)
 
-2mm-to-0.1" adapter:
+## 2mm-to-0.1" Adapter
 
 ![2mm to 0.1" breakout](Images/DIP20-adapter.png)
 
 
 ## IOMOD-AD5593R
 
-This module is designed to be a generic I/O module that provides basic
+This variant is designed to be a generic I/O module that provides basic
 features to cover typical use cases where high ADC precision, etc is
 not required. It's very flexible because it can handle both analog and 
-digital input and output with a true analog output via DAC, but unfortunately 
+digital input and output with true analog output via the DAC, but unfortunately 
 the AD5593R chips are quite expensive.
 
 ![IOMOD-AD5593R](Images/IOMOD-AD5593R-v2_0-oblique.png)
 
-Features:
+**Features**
 
  * AD5593R I/O expander.
  * I2C interface.
@@ -67,13 +88,15 @@ For use with Arduino, see Rob Tillaart's excellent library at [github.com/RobTil
 
 ## IOMOD-MCP23008
 
-This module is based on the extremely popular MCP23008 I2C I/O expander 
+This variant is based on the extremely popular MCP23008 I2C I/O expander 
 chip, which means it has excellent driver support. However, it is only 
 capable of digital input and output. It doesn't support analog I/O at all. 
 This makes it less flexible than the AD5593R module, but probably simpler 
 to set up in terms of software support. It's also significantly cheaper. 
 
-Features:
+![IOMOD-MCP23008](Images/IOMOD-MCP23008-v1_0-oblique.png)
+
+**Features**
 
  * MCP23008 I/O expander.
  * I2C interface.
@@ -82,15 +105,13 @@ Features:
  * 3.3V or 5V I/O interface.
  * Digital I/O on every pin.
 
-More information to come.
-
 ## IOMOD-MCP23S08
 
-This module has the same features as the MCP23008 module, except that it 
+This variant has the same features as the MCP23008 module, except that it 
 uses SPI for communication with the host. It was implemented mostly to 
 validate that the IOMOD header format is also useful for SPI-based modules.
 
-Features:
+**Features**
 
  * MCP23S08 I/O expander.
  * SPI interface.
@@ -99,14 +120,13 @@ Features:
  * 3.3V or 5V I/O interface.
  * Digital I/O on every pin.
 
-More information to come.
-
 ## IOMOD-SW8B
 
-This module is based on SerialWombat from Broadwell Consulting, which is 
-a project to create an extremely flexible I/O expander based on readily 
-available MCUs. This IOMOD is based on the CH32V003 MCU, the same as 
-used on the SerialWombat 8B.
+This variant is based on 
+[SerialWombat from Broadwell Consulting](https://www.serialwombat.com/), 
+which is a project to create an extremely flexible I/O expander using 
+readily available MCUs. This IOMOD is based on the CH32V003 MCU, the same 
+as used on the [SerialWombat 8B](https://www.kickstarter.com/projects/bwci/serial-wombat-8b-i2c-i-o-boards-big-features-small-money).
 
 Because SerialWombat firmware allows advanced functionality to be 
 offloaded to the I/O expander, it can be configured by the host and then 
@@ -120,7 +140,8 @@ More information to come.
 
 INSTALLATION
 ------------
-This project is saved as Fusion360 board and schematic files.
+Schematics and PCBs were created in Fusion360 and exported as EAGLE format,
+which can be imported back into Fusion360 or various other packages including KiCAD.
 
 CREDITS
 -------
