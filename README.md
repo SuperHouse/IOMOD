@@ -31,13 +31,13 @@ can't plug it into a breadboard. The format is 2mm pitch metric DIP with
 provided to allow easy use in a breadboard.
 
 Originally developed for the [Testomatic PCB test jig system](https://github.com/superhouse/testomatic).
-
 The Testomatic chassis includes sockets for 7 IOMODs, allowing different 
 modules to be installed based on the specific requirements of the test 
 plan for the Device Under Test.
 
 ## IOMOD Pinout
 
+<img style="float: right;" src="Images/IOMOD-pinout.png">
 IOMOD designs are not required to implement all signals. Typically an I2C-based 
 module will leave the SPI-related pins unconnected, and vice versa. Modules 
 may also not implement signals such as the active-low interrupt output or 
@@ -53,7 +53,22 @@ The reference designs included here tie both GND pins together as a
 common reference but this is not required if you are implementing full 
 isolation.
 
-![IO Mod Pinout](Images/IOMOD-v2_0-pinout.jpeg)
+| Pin   | Name  | Use                                       |
+|-------|-------|-------------------------------------------|
+| 1     | VBUS  | Voltage for control interface             |
+| 2     | !RST  | Reset input to module (active low)        |
+| 3     | !INT  | Interrupt output from module (active low) |
+| 4     | SDA   | I2C data                                  |
+| 5     | SCL   | I2C clock                                 |
+| 6     | !CS   | SPI chip select (active low)              |
+| 7     | MOSI  | SPI MOSI                                  |
+| 8     | MISO  | SPI MISO                                  |
+| 9     | SCK   | SPI clock                                 |
+| 10    | LGND  | Logic ground                              |
+| 11    | IOGND | I/O ground                                |
+| 12-19 | IOx   | I/O pins                                  |
+| 20    | VIO   | Voltage for I/O pins                      |
+
 
 ## IOMOD Mechanical Dimensions
 
