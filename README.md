@@ -90,6 +90,17 @@ Labels for the reference designs are included as an Affinity document
 and an A4 PDF. The labels have tabs that wrap underneath the module 
 to hold the label firmly in place.
 
+## Insertion / Removal Tool
+
+A 3D-printed tool design is included to make it easier to insert and 
+remove modules from a carrier board. Testomatic has 7 IOMODs mounted 
+close together so they're tricky to get out with your fingers.
+
+The tool uses a compliant-mechanism hinge. The hinge is a little fragile 
+but seems to work OK when printed in PLA. It may be more durable in PETG.
+
+![IOMOD Puller](Images/IOMOD-Puller.jpg)
+
 ## IOMOD-AD5593R
 
 This variant is designed to be a generic I/O module that provides basic
