@@ -6,6 +6,8 @@
 IOMOD is a mechanical and electrical convention for creating pluggable 
 I/O modules for use in test systems and other projects.
 
+![IO Mod Pinout](Images/IOMOD-family.jpg)
+
 The module pinout allows for either I2C or SPI connections to modules, 
 and up to 8 I/O pins per module. Modules can also optionally support two 
 power domains so that data connections to the host can be at a different 
